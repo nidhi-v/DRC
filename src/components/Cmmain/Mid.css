@@ -1,0 +1,503 @@
+/* General Styling */
+:root{
+    --blue-color:#211D70;
+    --grey-color:#BBBBBB;
+    --dark-grey:#686464;
+    --black:#000000;
+    --back-grey:#FAFAFC;
+    --breadcrumgs-grey:#cdcdcd;
+}
+.container{
+    margin: 0;
+    padding: 0 55px;
+    margin-top: 20px;
+    
+    
+ }
+  /* .breadcrumbs {
+    margin-bottom: 10px;
+  } */
+  
+  .breadcrumbs a {
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .breadcrumbs i{
+    margin-right: 5px;
+  }
+  .breadcrumbs .home{
+    color: var(--breadcrumgs-grey);
+    /* margin-right: 5px; */
+  }
+  .breadcrumbs .cm{
+    color:var(--dark-grey)
+  }
+  
+  
+  .title {
+    font-size: 24px;
+    margin-top: 30px;
+    color: var(--blue-color);
+    font-weight:normal ;
+  }
+  .title span{
+    color: var(--grey-color);
+  }
+  /* Layout */
+  .content {
+    display: flex;
+    justify-content: space-between;
+   
+  }
+  
+  .carousel-section,
+  .list-section {
+    width: 100%;
+  }
+  
+  .carousel-cards {
+    gap: 20px;
+    display: flex;
+    /* justify-content: space-between; */
+    /* padding: 10px; */
+    transition: transform 0.5s ease-in-out; 
+    margin-top: 15px;
+  }
+  .card-title {
+    margin-top: -5px;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--blue-color); /* Dark color for title */
+  }
+  .card-content {
+    font-size: 14px;
+    color: var(--dark-grey);
+    margin-top: 5px;
+  }
+  .card-link {
+    position: absolute;
+    top:20;
+    bottom: 15px;
+    /* right: 40px; */
+    margin-left: 170px;
+    /* align-self: flex-end; */
+    color: var(--blue-color);
+    text-decoration: none; 
+    cursor: pointer;
+    font-size: 14px;
+    
+  }
+  .carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-card {
+    width: 250px; 
+    height:100px;
+    padding: 15px;
+    border: 1px solid var(--grey-color);
+    text-align: left; /* Ensures text is left-aligned */
+    border-radius: 8px;
+    /* background: linear-gradient(119deg, #FFF 0%, #E8E8E8 100%);  */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    opacity: 0; /* Initially hide the cards */
+    transform: translateX(80%); /* Start from the right (off-screen) */
+    animation: slideInRight 0.7s forwards ease-out;
+    animation: slideInLeft 0.7s forwards ease-out;  /* Add slide-in animation */
+  }
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%); /* Start off-screen */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* End at original position */
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%); /* Start off-screen */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* End at original position */
+    }
+  }
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .carousel-card.fade-in {
+    animation: fadeIn 0.5s forwards ease-out;
+  }
+  .circle-navigator {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .circle {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .circle.active {
+    background-color: var(--blue-color);
+  }
+  
+  /* .carousel-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .carousel-controls button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  } */
+  .list-section{
+    margin-left: 150px;
+    position: relative; 
+   
+  }
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* bottom: 10; */
+    width: 40%;
+    /* height: 100%; */
+    /* object-fit: cover; */
+    margin-left: 60%;
+    margin-top: 10%;
+ 
+  }
+  .list-inner{
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Ensures content is above the background image */
+  z-index: 1;
+    
+    /* justify-content: space-between; */
+  }
+  .list-logo i{
+    align-self: center;
+    margin-top: 15px;
+    padding-right: 10px;
+    font-size: 30px;
+  }
+  .list-content{
+    /* margin-top: -20px; */
+    /* display: flex; */
+    justify-content: center;
+  }
+  .list-content h5{
+    font-size: 14px;
+    color: var(--blue-color);
+    font-weight: normal;
+    margin-bottom: 5px;
+    /* margin-top: 20px; */
+  }
+  .list-content p{
+    margin: 0;
+    font-size: 14px;
+    color: var(--dark-grey);
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  .list-content p i{
+    padding: 0 5px;
+    color: #000000;
+  }
+  .list-section li {
+    /* padding: 5px 0; */
+    /* border-bottom: 1px solid #ccc; */
+  }
+  .kpis-main{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    /* margin-top: -15px; */
+    color: var(--blue-color);
+  }
+    .kpi-1 h4{
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .kpi-1 p{
+    font-size: 14px;
+    margin-top: -20px;
+    color: var(--dark-grey);
+  }
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  
+    .carousel-section,
+    .list-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .background-image{
+      display: none;
+    }
+  }
+  @media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .carousel-section,
+    .list-section {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+
+    .carousel-card {
+        width: 250px;
+    }
+
+    .kpis-main {
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
+    }
+
+    .kpi-1 h4 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .kpi-1 p{
+      margin-top: 0px;
+    }
+    .breadcrumbs {
+      margin-left: 20px;
+    }
+    .title{
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .carousel-section,
+    .list-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .carousel-card {
+        width: 100%;
+        height: 40%;
+    }
+
+    .list-section {
+        margin-left: 0;
+    }
+
+    .circle {
+        width: 10px;
+        height: 10px;
+    }
+    .carousel-card a{
+      margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    
+    .car-title {
+        font-size: 18px;
+    }
+
+    .carousel-card {
+        padding: 10px;
+    }
+
+    .kpis-main {
+        width: 100%;
+    }
+
+    .kpi-1 h4 {
+        font-size: 20px;
+    }
+
+    .list-content h5,
+    .list-content p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+
+  .container {
+      padding: 0 15px;
+  }
+
+  .carousel-section,
+  .list-section {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .title {
+      font-size: 24px;
+  }
+
+  .card-title {
+      font-size: 20px;
+  }
+
+  .carousel-wrapper {
+      overflow: hidden; /* Ensures only one card shows at a time */
+      position: relative;
+      width: 100%; /* Full width for mobile view */
+  }
+
+  .carousel-cards {
+      display: flex;
+      flex-wrap: nowrap;
+      transform: translateX(0);
+      transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-card {
+      min-width: 100%; /* Show only one card at a time */
+      max-width: 100%;
+      margin: 0;
+  }
+
+  .circle {
+      width: 10px;
+      height: 10px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 20px;
+      margin-top: 20px;
+  }
+
+  .card-title {
+      font-size: 18px;
+  }
+
+  .carousel-card {
+      padding: 10px;
+  }
+
+  .circle-navigator {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+  .circle {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .circle.active {
+      background-color: var(--blue-color);
+  }
+}
+@media (max-width: 768px) {
+  .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      margin-top: -20px;
+  }
+
+  .carousel-cards {
+      display: flex;
+      transform: translateX(0);
+      transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-card {
+      min-width: 90%;
+      max-width: 100%;
+  }
+}
+
+.circle-navigator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.circle.active {
+  background-color: var(--blue-color);
+}
+
+
+  
